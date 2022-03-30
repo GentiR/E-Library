@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zPAPzHpTxULXIok10enuAauKMy/Oxc/O6RBwUiFd7h8DFCCVM5M0+l4mIh01zQzJpjtP9pZFhaMsBGLRFj8ezA==",
+  "dgSpecHash": "O1bWAgu+x7Y6xyTq2bD0E6EGZU+cxMd7kTMIvtP7w3FU069DWmKxuzc1xxg+RUMVPrYHlHnkbEJUMx+0W0VVVQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Gent Rechica\\Downloads\\Smis_Menagment\\E-Library\\Application\\Application.csproj",
+  "projectFilePath": "C:\\Users\\Gent Rechica\\Desktop\\Sem6\\LibraryStore\\E-Library\\Application\\Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Gent Rechica\\.nuget\\packages\\microsoft.data.sqlite.core\\5.0.1\\microsoft.data.sqlite.core.5.0.1.nupkg.sha512",
     "C:\\Users\\Gent Rechica\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\3.1.6\\microsoft.dotnet.platformabstractions.3.1.6.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nDCnjXBdJSCCKf+FoRBjU+MSCgny7/fdf74KLrosRrgnWCEK59zsP9/DpBMmZGpiDR1nQ3GrRhAXcqlHWJKiBg==",
+  "dgSpecHash": "geOe3Xwlsddjb4SpUL+c4Q8zmwCjvdPTt5+h3/sZOUjOf0ME4ZH/13Oo0Lv2XxdZU88UqzJQOSBm1D86uSKPWQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Gent Rechica\\Downloads\\Smis_Menagment\\E-Library\\Persistence\\Persistence.csproj",
+  "projectFilePath": "C:\\Users\\Gent Rechica\\Desktop\\Sem6\\LibraryStore\\E-Library\\Persistence\\Persistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Gent Rechica\\.nuget\\packages\\microsoft.data.sqlite.core\\5.0.1\\microsoft.data.sqlite.core.5.0.1.nupkg.sha512",
     "C:\\Users\\Gent Rechica\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\3.1.6\\microsoft.dotnet.platformabstractions.3.1.6.nupkg.sha512",

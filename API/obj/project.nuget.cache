@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aaktEQ6Xj9iS8snmfNsHBkuX/5jUdAc2s5Bp3WOMZ0pLvDDvGexG9Inh6+towB+FOHa+LeTHGntPz+0wjWoJAQ==",
+  "dgSpecHash": "6xzdBhyj3F0XtBdoou5u6Iq0GqOUl5ER1TYn4NxxMgaNlvJlPQoja0eTurB+KMKQFlgP1WmjJUdW20C8gE05uA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Gent Rechica\\Downloads\\Smis_Menagment\\E-Library\\API\\API.csproj",
+  "projectFilePath": "C:\\Users\\Gent Rechica\\Desktop\\Sem6\\LibraryStore\\E-Library\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Gent Rechica\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Gent Rechica\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

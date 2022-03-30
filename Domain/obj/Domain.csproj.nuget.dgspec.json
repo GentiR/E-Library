@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Gent Rechica\\Downloads\\Smis_Menagment\\E-Library\\Domain\\Domain.csproj": {}
+    "C:\\Users\\Gent Rechica\\Desktop\\Sem6\\LibraryStore\\E-Library\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Gent Rechica\\Downloads\\Smis_Menagment\\E-Library\\Domain\\Domain.csproj": {
+    "C:\\Users\\Gent Rechica\\Desktop\\Sem6\\LibraryStore\\E-Library\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Gent Rechica\\Downloads\\Smis_Menagment\\E-Library\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Gent Rechica\\Desktop\\Sem6\\LibraryStore\\E-Library\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\Gent Rechica\\Downloads\\Smis_Menagment\\E-Library\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\Gent Rechica\\Desktop\\Sem6\\LibraryStore\\E-Library\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\Gent Rechica\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Gent Rechica\\Downloads\\Smis_Menagment\\E-Library\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\Gent Rechica\\Desktop\\Sem6\\LibraryStore\\E-Library\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Gent Rechica\\AppData\\Roaming\\NuGet\\NuGet.Config",
