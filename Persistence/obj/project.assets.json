@@ -953,19 +953,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Gent Rechica\\.nuget\\packages\\": {}
+    "C:\\Users\\owner\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Gent Rechica\\Desktop\\Sem6\\LibraryStore\\E-Library\\Persistence\\Persistence.csproj",
+      "projectUniqueName": "C:\\Users\\owner\\Desktop\\GitHub\\E-Library\\Persistence\\Persistence.csproj",
       "projectName": "Persistence",
-      "projectPath": "C:\\Users\\Gent Rechica\\Desktop\\Sem6\\LibraryStore\\E-Library\\Persistence\\Persistence.csproj",
-      "packagesPath": "C:\\Users\\Gent Rechica\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Gent Rechica\\Desktop\\Sem6\\LibraryStore\\E-Library\\Persistence\\obj\\",
+      "projectPath": "C:\\Users\\owner\\Desktop\\GitHub\\E-Library\\Persistence\\Persistence.csproj",
+      "packagesPath": "C:\\Users\\owner\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\owner\\Desktop\\GitHub\\E-Library\\Persistence\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Gent Rechica\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\owner\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -979,8 +983,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Gent Rechica\\Desktop\\Sem6\\LibraryStore\\E-Library\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\Gent Rechica\\Desktop\\Sem6\\LibraryStore\\E-Library\\Domain\\Domain.csproj"
+            "C:\\Users\\owner\\Desktop\\GitHub\\E-Library\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\owner\\Desktop\\GitHub\\E-Library\\Domain\\Domain.csproj"
             }
           }
         }
@@ -1015,7 +1019,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
       }
     }
   }

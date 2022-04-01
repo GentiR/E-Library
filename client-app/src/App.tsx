@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 import { response } from 'express';
+import { Header, List } from 'semantic-ui-react';
 function App() {
 
   const[authors, setAuthors] = useState([]);
@@ -15,18 +16,16 @@ function App() {
 //this array ensures that the code runs only one time
   },  [])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <ul>
-          <h1>hello</h1>
+    <div >
+     <Header as='h2' icon='users' content='E-Library' />
+    
+        <List>
           {authors.map((author: any) => (
-            <li key={author.id}>
+            <List.Item key={author.id}>
               {author.name}
-            </li>
+            </List.Item>
           ))}
-        </ul>
-      </header>
+        </List>
     </div>
   );
 }

@@ -46,3 +46,15 @@ C:\Users\Gent Rechica\Desktop\Sem6\LibraryStore\E-Library\Domain\obj\Debug\net5.
 C:\Users\Gent Rechica\Desktop\Sem6\LibraryStore\E-Library\Domain\obj\Debug\net5.0\Domain.dll
 C:\Users\Gent Rechica\Desktop\Sem6\LibraryStore\E-Library\Domain\obj\Debug\net5.0\ref\Domain.dll
 C:\Users\Gent Rechica\Desktop\Sem6\LibraryStore\E-Library\Domain\obj\Debug\net5.0\Domain.pdb
+C:\Users\owner\Desktop\GitHub\E-Library\Domain\bin\Debug\net5.0\Domain.deps.json
+C:\Users\owner\Desktop\GitHub\E-Library\Domain\bin\Debug\net5.0\Domain.dll
+C:\Users\owner\Desktop\GitHub\E-Library\Domain\bin\Debug\net5.0\ref\Domain.dll
+C:\Users\owner\Desktop\GitHub\E-Library\Domain\bin\Debug\net5.0\Domain.pdb
+C:\Users\owner\Desktop\GitHub\E-Library\Domain\obj\Debug\net5.0\Domain.csproj.AssemblyReference.cache
+C:\Users\owner\Desktop\GitHub\E-Library\Domain\obj\Debug\net5.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\owner\Desktop\GitHub\E-Library\Domain\obj\Debug\net5.0\Domain.AssemblyInfoInputs.cache
+C:\Users\owner\Desktop\GitHub\E-Library\Domain\obj\Debug\net5.0\Domain.AssemblyInfo.cs
+C:\Users\owner\Desktop\GitHub\E-Library\Domain\obj\Debug\net5.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\owner\Desktop\GitHub\E-Library\Domain\obj\Debug\net5.0\Domain.dll
+C:\Users\owner\Desktop\GitHub\E-Library\Domain\obj\Debug\net5.0\ref\Domain.dll
+C:\Users\owner\Desktop\GitHub\E-Library\Domain\obj\Debug\net5.0\Domain.pdb

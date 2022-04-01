@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Gent Rechica\\Desktop\\Sem6\\LibraryStore\\E-Library\\Domain\\Domain.csproj": {}
+    "C:\\Users\\owner\\Desktop\\GitHub\\E-Library\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Gent Rechica\\Desktop\\Sem6\\LibraryStore\\E-Library\\Domain\\Domain.csproj": {
+    "C:\\Users\\owner\\Desktop\\GitHub\\E-Library\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Gent Rechica\\Desktop\\Sem6\\LibraryStore\\E-Library\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\owner\\Desktop\\GitHub\\E-Library\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\Gent Rechica\\Desktop\\Sem6\\LibraryStore\\E-Library\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\Gent Rechica\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Gent Rechica\\Desktop\\Sem6\\LibraryStore\\E-Library\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\owner\\Desktop\\GitHub\\E-Library\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\owner\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\owner\\Desktop\\GitHub\\E-Library\\Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Gent Rechica\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\owner\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -54,7 +57,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
         }
       }
     }
