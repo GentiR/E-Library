@@ -35,6 +35,20 @@ namespace Persistence.Migrations
 
                     b.ToTable("Authors");
                 });
+
+            modelBuilder.Entity("Domain.Language", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("LanguageName")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Languages");
+                });
 #pragma warning restore 612, 618
         }
     }
