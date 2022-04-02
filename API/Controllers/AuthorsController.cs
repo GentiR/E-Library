@@ -3,32 +3,41 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Domain;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Persistence;
-using MediatR;
+
 using Application.Authors;
 
 namespace API.Controllers
 {
     public class AuthorsController : BaseApiController
     {
-        private readonly IMediator _mediator;
-        
-        public AuthorsController(IMediator mediator)
-        {
-            _mediator = mediator;
-            
-        }
-
         [HttpGet]
 
         public async Task<ActionResult<List<Author>>> GetAuthors(){
-            return await _mediator.Send(new List.Query{});
+            return await Mediator.Send(new List.Query{});
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Author>> GetAuthors(Guid id){
-           return Ok();
+        public async Task<ActionResult<Author>> GetAuthor(Guid id){
+          return await Mediator.Send(new Details.Query{Id = id});
+        }
+
+        [HttpPost]
+
+        public async Task<IActionResult> CreateAuthor(Author author)
+        {
+            return Ok(await Mediator.Send(new Create.Command{Author = author}));
+        }
+        [HttpPut("{id}")]
+        public async Task<IActionResult> EditAuthor(Guid id, Author author){
+            author.Id = id;
+            return Ok(await Mediator.Send(new Edit.Command{Author = author}));
+        }
+
+        [HttpDelete("{id}")]
+
+        public async Task<IActionResult> DeleteAuthor(Guid id)
+        {
+            return Ok(await Mediator.Send(new Delete.Command{Id = id}));
         }
    }
 }
