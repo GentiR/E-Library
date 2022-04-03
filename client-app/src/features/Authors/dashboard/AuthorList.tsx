@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, ButtonGroup, Item, ItemContent, ItemDescription, ItemHeader, Segment } from "semantic-ui-react";
+import { Button, Item,  Segment } from "semantic-ui-react";
 import { Author } from "../../../app/models/author";
 
 interface Props{
@@ -13,13 +13,14 @@ export default function AuthorList({authors}: Props){
            {authors.map(author =>(
                <Item key={author.id}>
                    <Item.Content>
-                       <ItemHeader as='a'>{author.name}</ItemHeader>
-                       <ItemContent>{author.surname}</ItemContent>
-                       <ItemDescription>{author.description}</ItemDescription>
-                       <ButtonGroup>
-                           <Button basic color="blue" content='Edit'/>
-                           <Button basic color="red" content='Delete'/>
-                       </ButtonGroup>
+                       <Item.Header as='a'>{author.name} {author.surname}</Item.Header>
+                       <Item.Description>
+                           <div>{author.description}</div>
+                           </Item.Description>
+                       <Item.Extra>
+                           <Button floated="right" color="blue" content='Edit'/>
+                           <Button floated="right" color="red" content='Delete'/>
+                       </Item.Extra>
                    </Item.Content>
                </Item>
            ))}

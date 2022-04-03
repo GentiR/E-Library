@@ -1,10 +1,10 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import axios from 'axios';
-import { response } from 'express';
-import {  Container, List } from 'semantic-ui-react';
+import {  Container } from 'semantic-ui-react';
 import { Author } from '../models/author';
 import NavBar from './NavBar';
 import AuthorDashboard from '../../features/Authors/dashboard/AuthorDashboard';
+
 function App() {
 
   const [authors, setAuthors] = useState<Author[]>([]);
@@ -16,9 +16,9 @@ function App() {
 //this array ensures that the code runs only one time
   },  [])
   return (
-    < >
+    <>
     <NavBar/>
-    <Container style={{margin:'7em'}}>
+    <Container style={{marginTop:'7em'}}>
     <AuthorDashboard authors={authors}/>
     </Container>
       

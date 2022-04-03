@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Form, Segment } from "semantic-ui-react";
+import { Button, Form, Segment } from 'semantic-ui-react';
 
 
 export default function AuthorForm(){
@@ -7,7 +7,7 @@ export default function AuthorForm(){
         <Segment clearing>
          <Form>
              <Form.Input placeholder='Name'/>
-             <Form.Input placeholder='Name'/>
+             <Form.Input placeholder='Surname'/>
              <Form.TextArea placeholder='Description'/>
              <Button floated="right" positive type="submit" content='Submit'/>
              <Button floated="right" type="button" content='Cancel'/>
