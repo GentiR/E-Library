@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import axios from 'axios';
 import { response } from 'express';
-import { Header, List } from 'semantic-ui-react';
+import {  Container, List } from 'semantic-ui-react';
 import { Author } from '../models/author';
+import NavBar from './NavBar';
+import AuthorDashboard from '../../features/Authors/dashboard/AuthorDashboard';
 function App() {
 
   const [authors, setAuthors] = useState<Author[]>([]);
@@ -14,17 +16,13 @@ function App() {
 //this array ensures that the code runs only one time
   },  [])
   return (
-    <div >
-     <Header as='h2' icon='users' content='E-Library' />
-    
-        <List>
-          {authors.map(author => (
-            <List.Item key={author.id}>
-              {author.name}
-            </List.Item>
-          ))}
-        </List>
-    </div>
+    < >
+    <NavBar/>
+    <Container style={{margin:'7em'}}>
+    <AuthorDashboard authors={authors}/>
+    </Container>
+      
+    </>
   );
 }
 
