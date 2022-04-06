@@ -1,16 +1,27 @@
-import React from "react";
-import { Button, Item,  Segment } from "semantic-ui-react";
-import { Author } from "../../../app/models/author";
+import { observer } from 'mobx-react-lite';
+import React, { SyntheticEvent, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Button, Item, Segment } from 'semantic-ui-react';
+import { useStore } from '../../../app/stores/store';
 
-interface Props{
-    authors: Author[];
-}
 
-export default function AuthorList({authors}: Props){
+
+export default observer(function AuthorList(){
+    const {authorStore} = useStore();
+    const {deleteAuthor, authorsByName, loading} = authorStore;
+
+
+    const [target, setTarget] = useState('');
+
+    function handleAuthorDelete(e: SyntheticEvent<HTMLButtonElement>, id: string){
+       setTarget(e.currentTarget.name);
+       deleteAuthor(id);
+    }
+    
  return(
      <Segment>
-      <Item.Group divided>
-           {authors.map(author =>(
+     <Item.Group divided>
+           {authorsByName.map(author =>(
                <Item key={author.id}>
                    <Item.Content>
                        <Item.Header as='a'>{author.name} {author.surname}</Item.Header>
@@ -18,8 +29,16 @@ export default function AuthorList({authors}: Props){
                            <div>{author.description}</div>
                            </Item.Description>
                        <Item.Extra>
-                           <Button floated="right" color="blue" content='Edit'/>
-                           <Button floated="right" color="red" content='Delete'/>
+                           <Button as={Link} to={`/authors/${author.id}` } floated="right" color="blue" content='View'/>
+                           <Button
+
+
+                           name={author.id}
+                           loading={loading && target === author.id} 
+                           onClick={(e) => handleAuthorDelete(e, author.id)}
+                           floated="right" 
+                           color="red" 
+                           content='Delete'/>
                        </Item.Extra>
                    </Item.Content>
                </Item>
@@ -28,4 +47,4 @@ export default function AuthorList({authors}: Props){
      </Segment>
  )
     
-}
+})
