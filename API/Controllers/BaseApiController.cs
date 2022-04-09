@@ -1,17 +1,15 @@
-using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace API.Controllers{
-[ApiController]
-[Route("api/[controller]")]
-public class BaseApiController : ControllerBase
+namespace API.Controllers
 {
-//making meadiator available to any derived clases from BaseApiController
-
-private IMediator _mediator;
-protected IMediator Mediator => _mediator ??= HttpContext.RequestServices.GetService<IMediator>();
-}
-
-
+    [ApiController]
+    [Route("api/[controller]")]
+    public class BaseApiController : ControllerBase
+    {
+        private IMediator _mediator;
+        //??= nese _mediator osht null at her e merr pjesen mas = e inicializon Mediator.
+        protected IMediator Mediator => _mediator ??= HttpContext.RequestServices.GetService<IMediator>();
+    }  
 }

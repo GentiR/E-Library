@@ -4,6 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Domain;
+using AutoMapper;
+using Domain;
+
 
 namespace Application.Core
 {
@@ -12,6 +15,7 @@ namespace Application.Core
         public MappingProfiles()
         {
             CreateMap<Author, Author>();
+            CreateMap<Book, Book>();
         }
         
     }
