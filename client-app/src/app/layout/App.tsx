@@ -20,11 +20,9 @@ const location = useLocation();
       <Route path="/authors" element={<AuthorDashboard />}/>
       <Route path="/authors/:id" element={<AuthorDetails />}/>
       <Route key={location.key} path="/createAuthor" element={<AuthorForm />}/>
-  
 
       {/* {['/createAuthor', '/manage/:id']} */}
       </Routes>
-    
     </Container>
   
       

@@ -8,8 +8,10 @@ namespace Persistence {
     public class Seed {
      public static async Task SeedData(DataContext context)
      {
-      if (context.Authors.Any()) return; 
-      if (context.Languages.Any()) return;
+        if (context.Authors.Any()) return; 
+        if (context.Languages.Any()) return;
+        if (context.Books.Any()) return; 
+        
         var languages = new List<Language>
         {
             new Language
@@ -63,10 +65,43 @@ namespace Persistence {
             },
         };
 
+      var books = new List<Book>
+      {
+          new Book
+          {
+              BookName = "Gjuetari i Balonave",
+              PublicationYear = 2003,
+              Publisher = "No Clue",
+          },
+            new Book
+          {
+              BookName = "Gjuetari i Balonave",
+              PublicationYear = 2003,
+              Publisher = "No Clue",
+          },
+           new Book
+          {
+              BookName = "Gjuetari i Balonave",
+              PublicationYear = 2003,
+              Publisher = "No Clue",
+          },
+              new Book
+          {
+              BookName = "Gjuetari i Balonave",
+              PublicationYear = 2003,
+              Publisher = "No Clue",
+          },
+             new Book
+          {
+              BookName = "Gjuetari i Balonave",
+              PublicationYear = 2003,
+              Publisher = "No Clue",
+          },
+      };
 
-
-      await context.Languages.AddRangeAsync(languages);
       await context.Authors.AddRangeAsync(authors);
+      await context.Books.AddRangeAsync(books);
+      await context.Languages.AddRangeAsync(languages);
       await context.SaveChangesAsync(); 
       
      }

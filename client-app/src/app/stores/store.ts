@@ -1,11 +1,15 @@
 import { createContext, useContext } from "react";
 import AuthorStore from "./authorStore"
 
+import BookStore from "./bookStore";
+
 interface Store{
-   authorStore : AuthorStore
+    bookStore: BookStore,
+    authorStore : AuthorStore
 }
 
-export const store: Store ={
+export const store: Store = {
+    bookStore: new BookStore(),
     authorStore: new AuthorStore()
 }
 

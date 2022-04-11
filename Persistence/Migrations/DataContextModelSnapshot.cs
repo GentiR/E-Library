@@ -36,6 +36,26 @@ namespace Persistence.Migrations
                     b.ToTable("Authors");
                 });
 
+            modelBuilder.Entity("Domain.Book", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("BookName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("PublicationYear")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Publisher")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Books");
+                });
+
             modelBuilder.Entity("Domain.Language", b =>
                 {
                     b.Property<Guid>("Id")

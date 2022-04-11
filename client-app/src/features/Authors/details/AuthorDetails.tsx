@@ -29,7 +29,7 @@ return(
     </Card.Content>
     <Card.Content extra>
      <Button.Group widths='2'>
-         <Button as={Link} to={`/manage/${author.id}` } basic color='blue' content='Edit'/>
+         <Button as={Link} to={`/manage/author/${author.id}` } basic color='blue' content='Edit'/>
          <Button as={Link} to={'/authors'} basic color='grey' content='Cancel'/>
      </Button.Group>
     </Card.Content>

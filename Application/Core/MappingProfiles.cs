@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Domain;
 
+
 namespace Application.Core
 {
     public class MappingProfiles : Profile
@@ -12,6 +13,7 @@ namespace Application.Core
         public MappingProfiles()
         {
             CreateMap<Author, Author>();
+            CreateMap<Book, Book>();
         }
         
     }

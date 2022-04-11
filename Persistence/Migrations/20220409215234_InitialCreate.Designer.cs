@@ -9,7 +9,7 @@ using Persistence;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220330200446_InitialCreate")]
+    [Migration("20220409215234_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,6 +36,26 @@ namespace Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Authors");
+                });
+
+            modelBuilder.Entity("Domain.Book", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("BookName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("PublicationYear")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Publisher")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Books");
                 });
 
             modelBuilder.Entity("Domain.Language", b =>
