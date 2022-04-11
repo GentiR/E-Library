@@ -1,18 +1,16 @@
 import { observer } from 'mobx-react-lite';
 import React, { ChangeEvent, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useHistory, useParams } from 'react-router-dom';
 import { Button, Form, Segment } from 'semantic-ui-react';
-import LoadingComponents from '../../../app/layout/LoadingComponents';
+import LoadingComponent from '../../../app/layout/LoadingConponents';
 import { useStore } from '../../../app/stores/store';
-import {v4 as uuid}  from 'uuid';
-import { useNavigate } from 'react-router-dom'
-import { Link } from 'react-router-dom';
+import {v4 as uuid} from 'uuid';
 
 
 
 export default observer( function BookForm(){
 
-    const navigate = useNavigate();
+    const history = useHistory();
     const {bookStore} = useStore();
     const {createBook, updateBook, loading, loadBook, loadingInitial} = bookStore;
     const {id} = useParams<{id: string}>();
@@ -34,9 +32,9 @@ export default observer( function BookForm(){
              ...book, 
              id: uuid()
          };
-         createBook(newBook).then(() => navigate(`/books/${newBook.id}`));
+         createBook(newBook).then(() => history.push(`/books/${newBook.id}`));
      }else{
-         updateBook(book).then(()=> navigate(`/books/${book.id}`));
+         updateBook(book).then(()=> history.push(`/books/${book.id}`));
      }
     }
 
@@ -44,8 +42,6 @@ export default observer( function BookForm(){
         const {name, value } = event.target;
         setBook({...book, [name]: value})
     }
-
-    if(loadingInitial) return <LoadingComponents content='Loading book...' />
 
     return(
         <Segment clearing>

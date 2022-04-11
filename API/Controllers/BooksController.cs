@@ -12,10 +12,10 @@ namespace API.Controllers
 
 
         [HttpGet]
-        public async Task<ActionResult<List<Book>>> GetBooks()
-        {
-            return await Mediator.Send(new List.Query());
-        }
+         public async Task<ActionResult<List<Book>>> GetBooks()
+         {
+             return await Mediator.Send(new List.Query());
+         }
 
 
         [HttpGet("{id}")]

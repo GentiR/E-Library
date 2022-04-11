@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { Button, Card, Image } from 'semantic-ui-react';
-import LoadingComponents from '../../../app/layout/LoadingComponents';
+import LoadingComponents from '../../../app/layout/LoadingConponents';
 import { useStore } from '../../../app/stores/store';
 
 export default observer( function BookDetails(){
@@ -33,7 +33,7 @@ export default observer( function BookDetails(){
         </Card.Content>
         <Card.Content extra>
             <Button.Group widths='2'>
-                <Button as={Link} to={`/manage/${book.id}`}  basic color='blue' content='Edit'/>
+                <Button as={Link} to={`/manage/book/${book.id}`}  basic color='blue' content='Edit'/>
                 <Button as={Link} to={`/books`} basic color='grey' content='Cancel'/>
             </Button.Group>
         </Card.Content>

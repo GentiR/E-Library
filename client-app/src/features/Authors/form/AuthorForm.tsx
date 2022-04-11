@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react-lite';
 import React, { ChangeEvent, useEffect, useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useHistory, useParams } from 'react-router-dom';
 import { Button, Form, Segment } from 'semantic-ui-react';
 import LoadingComponent from '../../../app/layout/LoadingConponents';
 import { Author } from '../../../app/models/author';
@@ -13,7 +13,7 @@ import {v4 as uuid} from 'uuid';
 
 
 export default observer( function AuthorForm() {
-const history = useNavigate();
+const history = useHistory();
     const {authorStore} = useStore();
     const {selectedAuthor, createAuthor, updateAuthor, loading, loadAuthor, loadingInitial } = authorStore;
     const {id} = useParams<{id: string}> ();
@@ -34,16 +34,15 @@ const history = useNavigate();
             ...author,
             id: uuid()
         };
-        createAuthor(newAuthor).then(() => history(`/authors/${newAuthor.id}`))
+        createAuthor(newAuthor).then(() => history.push(`/manage/author/${newAuthor.id}`))
         }else{
-            updateAuthor(author).then(() => history(`/authors/${author.id}`))
+            updateAuthor(author).then(() => history.push(`/manage/author/${author.id}`))
         }
     }
     function handleInputChange(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>){
        const{name, value} = event.target;
        setAuthor({...author,[name]: value})
     }
-    if(loadingInitial) return <LoadingComponent content='Loading author...'/>
     return(
         <Segment clearing>
          <Form onSubmit={handleSubmit} autoComplete='off'>

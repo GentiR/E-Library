@@ -4,14 +4,15 @@ import './app/layout/styles.css';
 import App from './app/layout/App';
 import reportWebVitals from './reportWebVitals';
 import { store, StoreContext } from './app/stores/store';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Router } from 'react-router-dom';
+import {createBrowserHistory} from 'history';
 
+export const history = createBrowserHistory();
 ReactDOM.render(
   <StoreContext.Provider value={store}>
-    <BrowserRouter>
-      <App/>
-    </BrowserRouter>
-    
+    <Router history={history}>
+        <App />
+    </Router>,    
     </StoreContext.Provider>
     ,
   document.getElementById('root')

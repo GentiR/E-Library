@@ -1,4 +1,4 @@
-import { Book } from './../layout/models/book';
+import { Book } from '../models/book';
 import { makeAutoObservable, runInAction} from "mobx";
 import agent from '../api/agentBooks';
 

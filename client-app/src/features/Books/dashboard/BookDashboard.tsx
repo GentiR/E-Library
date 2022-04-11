@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react-lite';
 import React, { useEffect } from 'react';
 import { Grid } from 'semantic-ui-react';
-import LoadingComponents from '../../../app/layout/LoadingComponents';
+import LoadingComponents from '../../../app/layout/LoadingConponents';
 import { useStore } from '../../../app/stores/store';
 import BookList from './BookList';
 

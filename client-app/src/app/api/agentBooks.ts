@@ -1,6 +1,6 @@
 
 //this file contains all the request that goes to api
-import { Book } from './../layout/models/book';
+import { Book } from '../models/book';
 import axios, { AxiosResponse } from "axios";
 
 const sleep = (delay: number) => {
