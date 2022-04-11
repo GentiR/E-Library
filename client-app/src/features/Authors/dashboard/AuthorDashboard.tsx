@@ -24,12 +24,10 @@ export default observer ( function AuthorDashboard(){
 
         
         <Grid>
-            <Grid.Column width='10'>
+            <Grid.Column width='8' >
             <AuthorList />
             </Grid.Column>
-            <Grid.Column width='6'>
-               <h2>Author filters</h2>
-            </Grid.Column>
+            
         </Grid>
     )
 })

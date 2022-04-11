@@ -14,6 +14,7 @@ namespace Persistence
         }
         public DbSet<Author> Authors { get; set;}
         public DbSet<Language> Languages { get; set;}
+        public DbSet<ContactForm> ContactForm { get; set;}
         
     }
 }

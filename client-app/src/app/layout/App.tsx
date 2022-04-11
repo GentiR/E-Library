@@ -8,6 +8,7 @@ import HomePage from '../../features/home/HomePage';
 import AuthorForm from '../../features/Authors/form/AuthorForm';
 import AuthorDetails from '../../features/Authors/details/AuthorDetails';
 
+
 function App() {
 const location = useLocation();
   return (
@@ -16,9 +17,10 @@ const location = useLocation();
     <Container style={{marginTop:'7em'}}>
       <Routes>
       <Route path="/" element={<HomePage />}/>
-      {/* <Route path="/authors" element={<AuthorDashboard />}/>
+      <Route path="/authors" element={<AuthorDashboard />}/>
       <Route path="/authors/:id" element={<AuthorDetails />}/>
-      <Route key={location.key} path="/createAuthor" element={<AuthorForm />}/> */}
+      <Route key={location.key} path="/createAuthor" element={<AuthorForm />}/>
+  
 
       {/* {['/createAuthor', '/manage/:id']} */}
       </Routes>

@@ -1,10 +1,62 @@
 body{
-  background-color: #EAEAEA !important;
+  background-color: #ffffff !important;
 }
 
 .ui.inverted.top.fixed.menu{
-  background-image: linear-gradient(135deg, rgb(24,42,115) 0%, rgb(33,138,174) 69%, rgb(32,167,172) 89%) !important;
+  background-image: linear-gradient(135deg, rgb(200, 163, 82) 0%, rgb(240, 212, 152) 69%, rgb(233, 231, 209) 89%) !important;
 }
+
+.ui.container{
+  display: flex;
+  justify-content: end;
+  
+}
+.link{
+  color: white;
+  margin-right: 40px;
+}
+.link:hover{
+  color: green;
+}
+.link:visited{
+  color: green;
+
+}
+.left-arrow{
+  position: absolute;
+  bottom: 240px;
+  left: 30px;
+  width: 40px;
+  height: 50px;
+}
+.right-arrow{
+  position: absolute;
+  bottom: 240px;
+  right: 30px;
+  width: 40px;
+  height: 50px;
+}
+.linkVisited:hover{
+  color: green;
+}
+.linkVisited{
+  color: white;
+}
+/* .ui.red.basic.label{
+  height: 100px;
+  width: 400px;
+} */
+.foto{
+  width: 200vh;
+  height: 60vh;
+  border-radius: 20px;
+}
+  @media only screen and (min-width: 1200px){
+  .ui.container {
+      width: 1827px;
+
+  }}
+
 
 
 

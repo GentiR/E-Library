@@ -43,7 +43,7 @@ const history = useNavigate();
        const{name, value} = event.target;
        setAuthor({...author,[name]: value})
     }
-    if(loadingInitial) return <LoadingComponent content='Loading author...'/>
+    
     return(
         <Segment clearing>
          <Form onSubmit={handleSubmit} autoComplete='off'>
