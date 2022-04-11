@@ -3,14 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Domain;
+using Microsoft.AspNetCore.Identity;
 
 namespace Persistence {
     public class Seed {
      public static async Task SeedData(DataContext context)
      {
-        if (context.Authors.Any()) return; 
+          
+        // if (!userManager.Users.Any()){
+        
+        //     var users = new List<AppUser>
+        //     {
+        //         new AppUser{Name = "Gent", UserName = "GentRechica", Email = "gent@gmail.com"},               
+        //         new AppUser{Name = "Blerine", UserName = "BlerineRestelica", Email = "blerina@gmail.com"},                
+        //         new AppUser{Name = "Dren", UserName = "DrenHyseni", Email = "dren@gmail.com"}                           
+        //     };
+        // }
+
+       
         if (context.Languages.Any()) return;
-        if (context.Books.Any()) return; 
         
         var languages = new List<Language>
         {
@@ -31,6 +42,9 @@ namespace Persistence {
                 LanguageName = "Italisht",                
             },
         };
+
+        if (context.Authors.Any()) return; 
+
         var authors = new List<Author>
         {   
             new Author
@@ -65,8 +79,10 @@ namespace Persistence {
             },
         };
 
-      var books = new List<Book>
-      {
+        if (context.Books.Any()) return; 
+
+        var books = new List<Book>
+        {
           new Book
           {
               BookName = "Gjuetari i Balonave",
