@@ -9,8 +9,7 @@ export default function HomePage(){
     return(
         <Container style={{marginTop: '7em'}}>
             <h1>Home Page</h1>
-            <ImageSlider slides={SliderData} />
-            <h3>Go to <Link to="/authors">Events</Link></h3>        
+            <ImageSlider slides={SliderData} />       
         </Container>
     )
 }

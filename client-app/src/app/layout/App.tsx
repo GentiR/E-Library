@@ -9,36 +9,50 @@ import AuthorDashboard from '../../features/Authors/dashboard/AuthorDashboard';
 import AuthorDetails from '../../features/Authors/details/AuthorDetails';
 import AuthorForm from '../../features/Authors/form/AuthorForm';
 import { Container } from 'semantic-ui-react';
-import GiftDashboard from '../../features/Gifts/dashboard/GiftDashboard';
-import GiftDetails from '../../features/Gifts/details/GiftDetails';
-import GiftForm from '../../features/Gifts/form/GiftForm';
+import LoginForm from '../../features/users/LoginForm';
+import WelcomePage from '../../features/home/WelcomePage';
+import {useStore} from '../stores/store';
+import { useEffect } from 'react';
+import LoadingComponent from './LoadingConponents';
+import ModalContainer from '../common/modals/ModalContainer';
 
 function App() {
-const location = useLocation();
-  return (
-    <>
-    <Route exact path='/' component={HomePage}/>
-      <Route
-        render={() => (
-        <>
-          <NavBar/>
-          <Container style={{marginTop: '7em'}}>
-            <Route exact path="/authors" component={AuthorDashboard}/>
-            <Route path="/authors/:id" component={AuthorDetails}/>
-            <Route key={location.key} path={['/createAuthor', '/manage/author/:id']} component={AuthorForm}/>
+  const location = useLocation();
+  const {commonStore, userStore} = useStore();
 
-            <Route exact path="/books" component={BookDashboard}/>
-            <Route path="/books/:id" component={BookDetails}/>
-            <Route  path={['/createBook', '/manage/book/:id']} component={BookForm}/> 
+  useEffect(() => {
+    if(commonStore.token){
+      userStore.getUser().finally(() => commonStore.setAppLoaded());
+    }else{
+      commonStore.setAppLoaded();
+    }
+  }, [commonStore, userStore])
 
-            <Route exact path="/gifts" component={GiftDashboard}/>
-            <Route path="/gifts/:id" component={GiftDetails}/>
-            <Route  path={['/createGift', '/manage/gift/:id']} component={GiftForm}/> 
-        </Container>
-        </>
-        )}
-      />
-    </>
-  );
+  if(!commonStore.appLoaded) return <LoadingComponent content='Loading app...' />
+
+    return (
+      <>
+      <ModalContainer/>
+      <Route exact path='/' component={WelcomePage}/>
+        <Route
+        path={'/(.+)'}
+          render={() => (
+          <>
+            <NavBar />
+            <Container style={{marginTop: '7em'}}>
+              <Route path='/index' component={HomePage}/>
+              <Route path="/authors" component={AuthorDashboard}/>
+              <Route path="/authors/:id" component={AuthorDetails}/>
+              <Route key={location.key} path={['/createAuthor', '/manage/author/:id']} component={AuthorForm}/>
+              <Route exact path="/books" component={BookDashboard}/>
+              <Route path="/books/:id" component={BookDetails}/>
+              <Route path={['/createBook', '/manage/book/:id']} component={BookForm}/> 
+              <Route path='/login' component={LoginForm}/>
+          </Container>
+          </>
+          )}
+        />
+      </>
+    );
 }
 export default observer(App);

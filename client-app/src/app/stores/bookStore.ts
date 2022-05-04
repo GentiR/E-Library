@@ -1,6 +1,6 @@
 import { Book } from '../models/book';
 import { makeAutoObservable, runInAction} from "mobx";
-import agent from '../api/agentBooks';
+import agent from "../api/agent";
 
 export default class BookStore{
     bookRegistry = new Map<string, Book>();

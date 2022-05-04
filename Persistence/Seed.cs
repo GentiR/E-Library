@@ -7,18 +7,23 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Persistence {
     public class Seed {
-     public static async Task SeedData(DataContext context)
+     public static async Task SeedData(DataContext context, UserManager<AppUser> userManager)
      {
           
-        // if (!userManager.Users.Any()){
+        if (!userManager.Users.Any()){
         
-        //     var users = new List<AppUser>
-        //     {
-        //         new AppUser{Name = "Gent", UserName = "GentRechica", Email = "gent@gmail.com"},               
-        //         new AppUser{Name = "Blerine", UserName = "BlerineRestelica", Email = "blerina@gmail.com"},                
-        //         new AppUser{Name = "Dren", UserName = "DrenHyseni", Email = "dren@gmail.com"}                           
-        //     };
-        // }
+            var users = new List<AppUser>
+            {
+                new AppUser{DisplayName = "Gent", UserName = "GentRechica", Email = "gent@gmail.com"},               
+                new AppUser{DisplayName = "Blerine", UserName = "BlerineRestelica", Email = "blerina@gmail.com"},                
+                new AppUser{DisplayName = "Dren", UserName = "DrenHyseni", Email = "dren@gmail.com"}                           
+            };
+
+            foreach(var user in users)
+            {
+                await userManager.CreateAsync(user, "Pa$$w0rd");
+            }
+        }
 
        
         if (context.Languages.Any()) return;

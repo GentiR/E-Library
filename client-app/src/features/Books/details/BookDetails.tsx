@@ -21,8 +21,8 @@ export default observer( function BookDetails(){
 
     return(
       <div className='detailsContainer'>
-        <Card  fluid>
-      <Image   src={foto}/>
+        <Card fluid>
+      <Image src={foto}/>
         <Card.Content>
           <Card.Header>{book.bookName}</Card.Header>
           <Card.Meta>

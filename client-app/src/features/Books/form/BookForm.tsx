@@ -56,7 +56,7 @@ export default observer( function BookForm(){
                 <Form.Input placeholder='Publisher' value={book.publisher} name='publisher' onChange={handleInputChange}/>
                 <Form.Input placeholder='Price' value={book.price} name='price' onChange={handleInputChange}/>
                 {/* Image input */}
-                <Form.Input type='file' accept="image/*" value={book.image} name='image' onChange={handleInputChange}/> 
+                <Form.Input type='file' accept="image/*" name='image' onChange={handleInputChange}/> 
 
                 <Button loading={loading} floated='right' positive type='submit' content='Submit' />
                 <Button as={Link} to={`/books/${book.id}`}  floated='right'  type='button' content='Cancel'/>

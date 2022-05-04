@@ -5,12 +5,13 @@ using Domain;
 using Microsoft.AspNetCore.Mvc;
 using Application.Books;
 using System.Threading;
+using Microsoft.AspNetCore.Authorization;
+
 namespace API.Controllers
 {
+    [AllowAnonymous]
     public class BooksController : BaseApiController
     {
-
-
         [HttpGet]
          public async Task<ActionResult<List<Book>>> GetBooks()
          {

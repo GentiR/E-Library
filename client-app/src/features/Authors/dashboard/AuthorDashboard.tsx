@@ -19,7 +19,7 @@ export default observer ( function AuthorDashboard(){
    
    
   
-    if(authorStore.loadingInitial) return <LoadingComponent content='Loading app' />
+    if(authorStore.loadingInitial) return <LoadingComponent content='Loading authors...' />
     return(
 
         

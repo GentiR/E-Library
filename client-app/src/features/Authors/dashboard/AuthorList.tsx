@@ -29,7 +29,7 @@ export default observer(function AuthorList(){
                            <div>{author.description}</div>
                            </Item.Description>
                        <Item.Extra>
-                           <Button as={Link} to={`/authors/${author.id}` } floated="right" color="blue" content='View'/>
+                           <Button as={Link} to={`/manage/author/${author.id}` } floated="right" color="blue" content='View'/>
                            <Button
 
 
