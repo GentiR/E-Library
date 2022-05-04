@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 import { Button, Card, Image } from 'semantic-ui-react';
 import LoadingComponents from '../../../app/layout/LoadingConponents';
 import { useStore } from '../../../app/stores/store';
+import foto from '../../../Foto/Harryy.png';
 
 export default observer( function BookDetails(){
   const {bookStore}= useStore();
@@ -19,9 +20,9 @@ export default observer( function BookDetails(){
   if(loadingInitial || !book) return <LoadingComponents/>
 
     return(
-
-        <Card fluid>
-      <Image src={`/assets/categoryImages/${book.bookName}.jpg`}  />
+      <div className='detailsContainer'>
+        <Card  fluid>
+      <Image   src={foto}/>
         <Card.Content>
           <Card.Header>{book.bookName}</Card.Header>
           <Card.Meta>
@@ -38,6 +39,6 @@ export default observer( function BookDetails(){
             </Button.Group>
         </Card.Content>
       </Card>
-
+      </div>
     )
 })

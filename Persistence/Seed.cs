@@ -88,36 +88,90 @@ namespace Persistence {
               BookName = "Gjuetari i Balonave",
               PublicationYear = 2003,
               Publisher = "No Clue",
+              Price = 15,
+              Image = "HarryPotter.png",
+
           },
             new Book
           {
               BookName = "Gjuetari i Balonave",
               PublicationYear = 2003,
               Publisher = "No Clue",
+              Price = 15,
+              Image = "HarryPotter.png",
           },
            new Book
           {
               BookName = "Gjuetari i Balonave",
               PublicationYear = 2003,
               Publisher = "No Clue",
+              Price = 15,
+              Image = "HarryPotter.png",
           },
               new Book
           {
               BookName = "Gjuetari i Balonave",
               PublicationYear = 2003,
               Publisher = "No Clue",
+              Price = 15,
+              Image = "HarryPotter.png",
           },
              new Book
           {
               BookName = "Gjuetari i Balonave",
               PublicationYear = 2003,
               Publisher = "No Clue",
+              Price = 15,
+              Image = "HarryPotter.png",
           },
       };
 
+            //GIFT seed
+        if (context.Gifts.Any()) return; 
+
+            var gifts = new List<Gift>
+            {
+            new Gift
+            {
+               GiftName = "Laps",
+               GiftPrice = 1,
+               GiftQuantity = 5,
+               Image = "laps.png"
+
+            },
+                new Gift
+            {
+                 GiftName = "Laps",
+               GiftPrice = 1,
+               GiftQuantity = 5,
+               Image = "laps.png"
+            },
+            new Gift
+            {
+                  GiftName = "Laps",
+               GiftPrice = 1,
+               GiftQuantity = 5,
+               Image = "laps.png"
+            },
+                new Gift
+            {
+                  GiftName = "Laps",
+               GiftPrice = 1,
+               GiftQuantity = 5,
+               Image = "laps.png"
+            },
+                new Gift
+            {
+                  GiftName = "Laps",
+               GiftPrice = 1,
+               GiftQuantity = 5,
+               Image = "laps.png"
+            },
+        };
       await context.Authors.AddRangeAsync(authors);
       await context.Books.AddRangeAsync(books);
       await context.Languages.AddRangeAsync(languages);
+      await context.Gifts.AddRangeAsync(gifts);
       await context.SaveChangesAsync(); 
       
      }

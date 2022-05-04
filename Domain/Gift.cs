@@ -5,17 +5,15 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public class Book
+    public class Gift
     {
         public Guid Id { get; set; }
 
-        public string BookName { get; set; }
+        public string GiftName { get; set; }
 
-        public int PublicationYear { get; set; }
+        public double GiftPrice { get; set; }
 
-        public string Publisher { get; set; }
-
-        public int Price { get; set; }
+        public int GiftQuantity { get; set; }
 
         public string Image { get; set; }
 

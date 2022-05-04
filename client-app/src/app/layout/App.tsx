@@ -9,6 +9,9 @@ import AuthorDashboard from '../../features/Authors/dashboard/AuthorDashboard';
 import AuthorDetails from '../../features/Authors/details/AuthorDetails';
 import AuthorForm from '../../features/Authors/form/AuthorForm';
 import { Container } from 'semantic-ui-react';
+import GiftDashboard from '../../features/Gifts/dashboard/GiftDashboard';
+import GiftDetails from '../../features/Gifts/details/GiftDetails';
+import GiftForm from '../../features/Gifts/form/GiftForm';
 
 function App() {
 const location = useLocation();
@@ -23,9 +26,14 @@ const location = useLocation();
             <Route exact path="/authors" component={AuthorDashboard}/>
             <Route path="/authors/:id" component={AuthorDetails}/>
             <Route key={location.key} path={['/createAuthor', '/manage/author/:id']} component={AuthorForm}/>
+
             <Route exact path="/books" component={BookDashboard}/>
             <Route path="/books/:id" component={BookDetails}/>
             <Route  path={['/createBook', '/manage/book/:id']} component={BookForm}/> 
+
+            <Route exact path="/gifts" component={GiftDashboard}/>
+            <Route path="/gifts/:id" component={GiftDetails}/>
+            <Route  path={['/createGift', '/manage/gift/:id']} component={GiftForm}/> 
         </Container>
         </>
         )}

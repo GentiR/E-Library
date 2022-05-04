@@ -5,6 +5,7 @@ import { Button, Form, Segment } from 'semantic-ui-react';
 import LoadingComponent from '../../../app/layout/LoadingConponents';
 import { useStore } from '../../../app/stores/store';
 import {v4 as uuid} from 'uuid';
+import '../../../'
 
 
 
@@ -19,7 +20,9 @@ export default observer( function BookForm(){
         id: '',
         bookName:'',
         publicationYear: '',
-        publisher:''
+        publisher:'',
+        price: '',
+        image:'',
     });
 
         useEffect(() =>{
@@ -42,15 +45,22 @@ export default observer( function BookForm(){
         const {name, value } = event.target;
         setBook({...book, [name]: value})
     }
+ 
 
     return(
         <Segment clearing>
+            <h1>Add a book</h1>
             <Form onSubmit={handleSubmit} autoComplete='off'>
                 <Form.Input placeholder='BookName' value={book.bookName} name='bookName' onChange={handleInputChange}/>
                 <Form.Input type='number' placeholder='Publication Year' value={book.publicationYear} name='publicationYear' onChange={handleInputChange}/>
                 <Form.Input placeholder='Publisher' value={book.publisher} name='publisher' onChange={handleInputChange}/>
+                <Form.Input placeholder='Price' value={book.price} name='price' onChange={handleInputChange}/>
+                {/* Image input */}
+                <Form.Input type='file' accept="image/*" value={book.image} name='image' onChange={handleInputChange}/> 
+
                 <Button loading={loading} floated='right' positive type='submit' content='Submit' />
                 <Button as={Link} to={`/books/${book.id}`}  floated='right'  type='button' content='Cancel'/>
+             
             </Form>
         </Segment>
     )

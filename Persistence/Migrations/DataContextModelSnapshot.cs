@@ -115,6 +115,12 @@ namespace Persistence.Migrations
                     b.Property<string>("BookName")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Image")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Price")
+                        .HasColumnType("INTEGER");
+
                     b.Property<int>("PublicationYear")
                         .HasColumnType("INTEGER");
 
@@ -124,6 +130,52 @@ namespace Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Books");
+                });
+
+            modelBuilder.Entity("Domain.ContactForm", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Message")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ContactForm");
+                });
+
+            modelBuilder.Entity("Domain.Gift", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("GiftName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<double>("GiftPrice")
+                        .HasColumnType("REAL");
+
+                    b.Property<int>("GiftQuantity")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Gifts");
                 });
 
             modelBuilder.Entity("Domain.Language", b =>

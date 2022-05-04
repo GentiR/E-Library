@@ -14,6 +14,7 @@ namespace Application.Core
         {
             CreateMap<Author, Author>();
             CreateMap<Book, Book>();
+            CreateMap<Gift, Gift>();
         }
         
     }

@@ -4,31 +4,25 @@ import { Grid } from 'semantic-ui-react';
 import LoadingComponents from '../../../app/layout/LoadingConponents';
 import { useStore } from '../../../app/stores/store';
 import { Card, Icon, Image } from 'semantic-ui-react'
-import BookList from './BookList';
+import GiftList from './GiftList';
 
 
-export default observer( function BookDashboard(){
+export default observer(function GiftDashboard(){
+    const {giftStore} = useStore();
+    const {loadGifts, giftRegistry} = giftStore;
 
-    const{bookStore} = useStore(); 
-    const{loadBooks, bookRegistry} = bookStore; 
-    
     useEffect(() => {
-        if(bookRegistry.size <= 1) loadBooks();
-    //this array ensures that the code runs only one time
-    },  [bookRegistry.size, loadBooks])
+        if(giftRegistry.size <= 1) loadGifts();
+    }, [giftRegistry.size, loadGifts])
+
+    if(giftStore.loadingInitial) return <LoadingComponents content='Loading app'/>
 
 
-   if(bookStore.loadingInitial) return <LoadingComponents content='Loading app' />
-
-    
     return(
-
-
-
         <Grid>
             <Grid.Column width='16'>
-              <BookList />
+                <GiftList/>
             </Grid.Column>
         </Grid>
     )
-})
+    })

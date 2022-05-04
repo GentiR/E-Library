@@ -20,6 +20,7 @@ export default observer ( function AuthorDetails(){
 
   if(loadingInitial || !author) return <LoadingComponent/>;
 return(
+  <div className='detailsContainer'>
   <Card fluid>
     <Card.Content>
       <Card.Header>{author.name}</Card.Header>
@@ -34,5 +35,6 @@ return(
      </Button.Group>
     </Card.Content>
   </Card>
+  </div>
 )
 })
