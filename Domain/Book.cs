@@ -18,6 +18,9 @@ namespace Domain
         public int Price { get; set; }
 
         public string Image { get; set; }
+        
+        public ICollection<Author> Authors {get; set; }
+
 
     }
 }
