@@ -101,7 +101,6 @@ updateAuthor = async (author: Author) => {
           this.loading = false;
       })
     }
-
 }
 deleteAuthor = async (id: string) => {
     this.loading = true;

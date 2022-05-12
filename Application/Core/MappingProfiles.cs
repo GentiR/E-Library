@@ -13,6 +13,7 @@ namespace Application.Core
         public MappingProfiles()
         {
             CreateMap<Author, Author>();
+            CreateMap<Event, Event>();
             CreateMap<Book, Book>();
             CreateMap<Gift, Gift>();
         }

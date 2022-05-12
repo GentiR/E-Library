@@ -16,7 +16,7 @@ namespace Persistence
         }
         public DbSet<Author> Authors { get; set;}
         public DbSet<Language> Languages { get; set;}
-        public DbSet<ContactForm> ContactForm { get; set;}
+        
         public DbSet<Book> Books { get; set;}        
         public DbSet<Gift> Gifts { get; set;}
         protected override void OnModelCreating(ModelBuilder builder)
@@ -28,5 +28,7 @@ namespace Persistence
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
         }
+          
+        public DbSet<Event> Events { get; set;}      
     }
 }

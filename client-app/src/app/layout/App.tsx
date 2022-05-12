@@ -8,6 +8,7 @@ import BookDetails from '../../features/Books/details/BookDetails';
 import AuthorDashboard from '../../features/Authors/dashboard/AuthorDashboard';
 import AuthorDetails from '../../features/Authors/details/AuthorDetails';
 import AuthorForm from '../../features/Authors/form/AuthorForm';
+import ContactForm from '../../features/contactPage/contactForm';
 import { Container } from 'semantic-ui-react';
 import LoginForm from '../../features/users/LoginForm';
 import WelcomePage from '../../features/home/WelcomePage';
@@ -15,6 +16,9 @@ import {useStore} from '../stores/store';
 import { useEffect } from 'react';
 import LoadingComponent from './LoadingConponents';
 import ModalContainer from '../common/modals/ModalContainer';
+import EventDashboard from '../../features/Events/dashboard/EventDashboard';
+import EventForm from '../../features/Events/form/EventForm';
+import EventDetails from '../../features/Events/details/EventDetails';
 
 function App() {
   const location = useLocation();
@@ -48,11 +52,15 @@ function App() {
               <Route path="/books/:id" component={BookDetails}/>
               <Route path={['/createBook', '/manage/book/:id']} component={BookForm}/> 
               <Route path='/login' component={LoginForm}/>
+              <Route exact path="/contactForm" component={ContactForm}/>
+            <Route exact path='/events' component={EventDashboard}/>
+            <Route path="/events/:id" component={EventDetails}/>
+            <Route path={['/createEvent', '/manage/event/edit/:id']} component={EventForm}/>
           </Container>
           </>
           )}
         />
       </>
     );
-}
+          }
 export default observer(App);

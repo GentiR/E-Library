@@ -5,6 +5,7 @@ import GiftStore from './giftStore';
 import commonStore from "./commonStore";
 import ModalStore from "./modalStore";
 import UserStore from "./userStore";
+import EventStore from "./eventStore";
 
 interface Store{
     bookStore: BookStore,
@@ -15,13 +16,20 @@ interface Store{
     modalStore: ModalStore;
 }
 
+interface Store{
+    bookStore: BookStore,
+    authorStore : AuthorStore,
+    eventStore: EventStore
+}
+
 export const store: Store = {
     bookStore: new BookStore(),
     authorStore: new AuthorStore(),
     giftStore : new GiftStore(),
     commonStore: new commonStore(),
     userStore: new UserStore(),
-    modalStore: new ModalStore()
+    modalStore: new ModalStore(),
+    eventStore: new EventStore()
 }
 
 export const StoreContext = createContext(store);

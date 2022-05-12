@@ -5,6 +5,8 @@ import { Link, NavLink } from 'react-router-dom';
 import { Button, Container, Dropdown, Menu, Image } from 'semantic-ui-react';
 import { useStore } from '../stores/store';
 
+
+
 export default observer(function NavBar() {
     const { userStore: { user, logout, isLoggedIn } } = useStore();
     return (
@@ -37,6 +39,26 @@ export default observer(function NavBar() {
                 </Menu.Item>
                 </>}
                
+                    <Menu.Item as={NavLink} to='/books' name='Books'/>
+                    <Menu.Item as={NavLink} to='/authors' name='Authors'/>
+                    <Menu.Item as={NavLink} to='/events' name='Events'/>
+                    <Dropdown text='Accecories and Gifts' pointing className='link item'>
+                <Dropdown.Menu>
+                    <Dropdown.Header>Accessories</Dropdown.Header>
+                    <Dropdown.Item>Bookmarks</Dropdown.Item>
+                    <Dropdown.Item>Book Holders</Dropdown.Item>
+                    <Dropdown.Divider />
+                    <Dropdown.Item>Gifts</Dropdown.Item>
+                </Dropdown.Menu>
+                    </Dropdown>
+                   
+                <Menu.Item>
+                    <Button as={NavLink} to='/contactForm' positive content='Contact Us' style={{marginLeft : '10px'}}/>
+                </Menu.Item>
+                <Menu.Item>
+                    <Button as={NavLink} to='/createBook' positive content='Create Book'/>
+                </Menu.Item>
+    
             </Container>
         </Menu>
     )

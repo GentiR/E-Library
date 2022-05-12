@@ -12,6 +12,11 @@ body{
   justify-content: space-evenly;
   
 }
+.react-calendar {
+  width: 100% !important;
+  border: none !important;
+  box-shadow: 0 1px 2px 0 rgb(34 36 38) !important;
+}
 .link{
   color: white;
   margin-right: 40px;
@@ -48,7 +53,7 @@ body{
   width: 400px;
 } */
 .foto{
-  width: 200vh;
+  width: 180vh;
   height: 60vh;
   border-radius: 0px;
 }

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Domain;
 using Microsoft.AspNetCore.Mvc;
-
 using Application.Authors;
 using Microsoft.AspNetCore.Authorization;
 

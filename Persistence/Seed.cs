@@ -142,7 +142,7 @@ namespace Persistence {
               Price = 15,
               Image = "HarryPotter.png",
           },
-      };
+      }; 
 
             //GIFT seed
         if (context.Gifts.Any()) return; 
@@ -184,12 +184,56 @@ namespace Persistence {
                GiftPrice = 1,
                GiftQuantity = 5,
                Image = "laps.png"
+            }
+            };
+              var events = new List<Event>
+            {   
+            new Event
+            {
+                Title = "Blerine ",
+                Date = 20-10-2021,
+                Description = "Blerina was born in Podujeve...",
+                Category = "drinks",
+                Venue = "Podujeve",
+            },
+            new Event
+            {
+                Title = "Blerine",
+                Date = 07-09-2010,
+                Description = "Blerina was born in Podujeve...",
+                Category = "culture",
+                Venue = "Podujeve",
+            },
+           new Event
+            {
+                Title = "Blerine",
+                Date = 10-20-2020,
+                Description = "Blerina was born in Podujeve...",
+                Category = "drinks",
+                Venue = "Blerinaaaaa",
+            },
+           new Event
+            {
+                Title = "Blerine",
+                Date = 20-10-2022,
+                Description = "Blerina was born in Podujeve...",
+                Category = "culture",
+                Venue = "Prishtine",
+            },
+            new Event
+            {
+                Title = "Blerine",
+                Date = 24-10-2021,
+                Description = "Blerina was born in Podujeve...",
+                Category = "drinks",
+                Venue = "Prishtine",
             },
         };
       await context.Authors.AddRangeAsync(authors);
       await context.Books.AddRangeAsync(books);
       await context.Languages.AddRangeAsync(languages);
       await context.Gifts.AddRangeAsync(gifts);
+      await context.Events.AddRangeAsync(events);
       await context.SaveChangesAsync(); 
       
      }
