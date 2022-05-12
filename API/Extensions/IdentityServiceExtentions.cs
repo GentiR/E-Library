@@ -36,7 +36,6 @@ namespace API.Extensions
                     };
                 });
             services.AddScoped<TokenService>();
-
             return services;
         }
     }

@@ -1,8 +1,6 @@
-
-
 import { Gift } from '../models/gift';
 import { makeAutoObservable, runInAction} from "mobx";
-import agent from '../api/agentGifts';
+import agent from "../api/agent";
 
 export default class GiftStore{
     giftRegistry = new Map<string, Gift>();

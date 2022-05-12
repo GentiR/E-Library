@@ -20,8 +20,8 @@ export default class UserStore {
             const user = await agent.Account.login(creds);
             store.commonStore.setToken(user.token);
             runInAction(() => this.user = user);
+            const path = user.role.toLowerCase();
             history.push('/index');
-            store.modalStore.closeModal();
         } catch (error) {
             throw error;
         }

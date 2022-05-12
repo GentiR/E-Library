@@ -1,6 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
 import { Author } from '../models/author';
 import { Book } from '../models/book';
+import { Gift } from '../models/gift';
 import { User, UserFormValues } from '../models/user';
 import { store } from '../stores/store';
 
@@ -54,14 +55,29 @@ const Books = {
     delete: (id: string) => axios.delete<void>(`/books/${id}`)
 }
 
+const Gifts = {
+    list: () => requests.get<Gift[]>('/gifts'),
+    details: (id: string)=> requests.get<Gift>(`/gifts/${id}`),
+    create: (book: Gift) => axios.post<void>('/gifts', book),
+    update: (book: Gift) => axios.put<void>(`/gifts/${book.id}`, book),
+    delete: (id: string) => axios.delete<void>(`/gifts/${id}`)
+}
+
 const Account = { 
     current: () => requests .get<User>('/account'),
     login: (user: UserFormValues) => requests.post<User>('/account/login', user),
-    register: (user: UserFormValues) => requests.post<User>('/account/register', user),}
+    register: (user: UserFormValues) => requests.post<User>('/account/register', user),
+}
+
+const Users = {
+    list: () => requests.get<User[]>('/user/all'),
+    details: (id: string) => requests.get<User>(`/user/${id}`),
+}
 
     const agent = {
     Authors,
     Books,
-    Account
+    Account,
+    Gifts
 }
 export default agent;

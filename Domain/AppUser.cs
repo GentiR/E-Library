@@ -2,9 +2,10 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Domain
 {
-    public class AppUser : IdentityUser
+    public abstract class AppUser : IdentityUser
     {
-        public string DisplayName { get; set; }
-        public string Bio { get; set; }
+        public string Firstname { get; set; }
+        public string Lastname { get; set; }
+        public abstract string Role { get; set; }
     }
 }
