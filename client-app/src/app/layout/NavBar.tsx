@@ -19,7 +19,6 @@ export default observer(function NavBar() {
 
                 {isLoggedIn &&
                 <>
-                    <Menu.Item as={NavLink} to='/authors' name='Authors'/>
                     <Menu.Item as={NavLink} to='/books' name='Books'/>
                     <Menu.Item>
                         <Button as={NavLink} to='/createAuthor' positive content='Add a new author'/>
