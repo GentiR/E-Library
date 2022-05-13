@@ -19,12 +19,6 @@ export default observer(function NavBar() {
 
                 {isLoggedIn &&
                 <>
-                    <Menu.Item as={NavLink} to='/books' name='Books'/>
-                    <Menu.Item>
-                        <Button as={NavLink} to='/createAuthor' positive content='Add a new author'/>
-                        <Button as={NavLink} to='/contactForm' positive content='Contact Us' style={{marginLeft : '10px'}}/>
-                        <Button as={NavLink} to='/createBook' positive content='Create Book'/>
-                    </Menu.Item>
 
                     <Menu.Item position='right'>
                     <Image src={user?.image || '/assets/user.png'} avatar spaced='right' />
