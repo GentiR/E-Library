@@ -9,7 +9,7 @@ using Persistence;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220512214142_InitialCreate")]
+    [Migration("20220513233500_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -349,11 +349,11 @@ namespace Persistence.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("Domain.Admin", b =>
+            modelBuilder.Entity("Domain.User", b =>
                 {
                     b.HasBaseType("Domain.AppUser");
 
-                    b.HasDiscriminator().HasValue("Admin");
+                    b.HasDiscriminator().HasValue("User");
                 });
 
             modelBuilder.Entity("AuthorBook", b =>

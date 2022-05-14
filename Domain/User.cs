@@ -7,7 +7,6 @@ namespace Domain
 {
     public class User : AppUser
     {
-        public override string Role { get; set; }  
-        public PersonalInfo PersonalInfo { get; set; }
+        public override string Role { get; set; }
     }
 }

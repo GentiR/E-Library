@@ -11,7 +11,7 @@ interface Props {
 
 
 export default function AuthorListItem({author}: Props){
-    const {authorStore} = useStore();
+    const {authorStore, userStore} = useStore();
     const {deleteAuthor, authorsByName, loading} = authorStore;
 
 
@@ -22,42 +22,43 @@ export default function AuthorListItem({author}: Props){
      }
     return(
    <Segment.Group>
-<Segment>
-    <Item.Group>
-        <Item>
-            <Item.Image size="tiny" circular src='/assets/user.png'/>
-            <Item.Content >
-                <Item.Header>
-                <Icon name="female"/>   {author.name}
-                </Item.Header>
-                <Item.Description>
-                  {author.surname}
-                </Item.Description>  
-            </Item.Content>
-        </Item>
-    </Item.Group>
-</Segment>
-<Segment>
-    <span>
-       
+        <Segment>
+            <Item.Group>
+                <Item>
+                    <Item.Image size="tiny" circular src='/assets/user.png'/>
+                    <Item.Content >
+                        <Item.Header>
+                        <Icon name="female"/>   {author.name}
+                        </Item.Header>
+                        <Item.Description>
+                        {author.surname}
+                        </Item.Description>  
+                    </Item.Content>
+                </Item>
+            </Item.Group>
+        </Segment>
+    <Segment>
+    <span>   
         <Icon name="book"/> {author.description}
     </span>
-</Segment>
-<Segment clearing>
-<Button
-     name={author.id}
-     loading={loading && target === author.id} 
-     onClick={(e) => handleAuthorDelete(e, author.id)}
-     floated="right" 
-     color="red" 
-     content='Delete'/>
-    <Button as={Link}
-    to={ `/authors/${author.id}`}
-    color='teal'
-    floated="right"
-    content='view'
-    />
-</Segment>
-   </Segment.Group>
+    </Segment>
+        <Segment clearing>
+        {userStore.isAdmin &&
+            <Button
+                name={author.id}
+                loading={loading && target === author.id} 
+                onClick={(e) => handleAuthorDelete(e, author.id)}
+                floated="right" 
+                color="red" 
+                content='Delete'/>
+            }
+            <Button as={Link}
+                to={ `/authors/${author.id}`}
+                color='teal'
+                floated="right"
+                content='view'
+            />
+        </Segment>
+    </Segment.Group>
     )
 }

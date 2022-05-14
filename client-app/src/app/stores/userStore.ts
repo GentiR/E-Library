@@ -5,15 +5,25 @@ import agent from "../api/agent";
 import { User, UserFormValues } from "../models/user";
 
 export default class UserStore {
+    userRegistry = new Map<string, User>();
     user: User | null = null;
 
     constructor() {
         makeAutoObservable(this)
     }
 
+    get userByFirstname(){
+        return Array.from(this.userRegistry.values());
+    }
+
     get isLoggedIn() {
         return !!this.user;
     }
+
+    get isAdmin() {
+        return this.user?.role === "admin" ? true : false;
+    }
+
 
     login = async (creds: UserFormValues) => {
         try {
@@ -22,6 +32,7 @@ export default class UserStore {
             runInAction(() => this.user = user);
             const path = user.role.toLowerCase();
             history.push('/index');
+            store.modalStore.closeModal();
         } catch (error) {
             throw error;
         }
@@ -43,9 +54,9 @@ export default class UserStore {
         }
     }
 
-    register = async (creds: UserFormValues) => {
+    registerUser = async (creds: UserFormValues) => {
         try {
-            const user = await agent.Account.register(creds);
+            const user = await agent.Account.registerUser(creds);
             store.commonStore.setToken(user.token);
             runInAction(() => this.user = user);
             history.push('/index');
@@ -55,4 +66,15 @@ export default class UserStore {
         }
     }
 
+    registerAdmin = async (creds: UserFormValues) => {
+        try {
+            const user = await agent.Account.registerAdmin(creds);
+            store.commonStore.setToken(user.token);
+            runInAction(() => this.user = user);
+            history.push('/index');
+            store.modalStore.closeModal();
+        } catch (error) {
+            throw error;
+        }
+    }
 }

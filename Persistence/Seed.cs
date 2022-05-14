@@ -14,20 +14,52 @@ namespace Persistence {
         {
             var users = new List<AppUser>
             {
-                new Admin
+                new User
                 {
-                    Firstname="Admin",
-                    Lastname="Admin",
-                    Email="admin@test.com",
-                    UserName="admin",
+                    Firstname="Gent",
+                    Lastname="Rechica",
+                    Email="adminGR@gmail.com",
+                    UserName="GentAdmin",
                     Role = "admin"
                 },
                 new User
                 {
-                    Firstname="User",
-                    Lastname="User",
-                    Email="User@test.com",
-                    UserName="User",
+                    Firstname="Dren",
+                    Lastname="Hyseni",
+                    Email="adminDH@gmail.com",
+                    UserName="DrenAdmin",
+                    Role = "admin"
+                },
+                new User
+                {
+                    Firstname="Blerine",
+                    Lastname="Restelica",
+                    Email="adminBR@gmail.com",
+                    UserName="BlerineAdmin",
+                    Role = "admin"
+                },
+                new User
+                {
+                    Firstname="UserGR",
+                    Lastname="Rechica",
+                    Email="userGR@gmail.com",
+                    UserName="UserGR",
+                    Role = "user"
+                },
+                new User
+                {
+                    Firstname="UserDH",
+                    Lastname="Hyseni",
+                    Email="userDH@gmail.com",
+                    UserName="UserDH",
+                    Role = "user"
+                },
+                new User
+                {
+                    Firstname="UserBR",
+                    Lastname="Restelica",
+                    Email="userBR@gmail.com",
+                    UserName="UserBR",
                     Role = "user"
                 },
             };

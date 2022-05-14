@@ -8,7 +8,7 @@ import AuthorListItem from './AuthorListItem';
 
 
 export default observer(function AuthorList(){
-    const {authorStore} = useStore();
+    const {authorStore, userStore} = useStore();
     const {deleteAuthor, authorsByName, loading} = authorStore;
 
 
@@ -16,16 +16,11 @@ export default observer(function AuthorList(){
  return(
      <>
      <Fragment>
-     <Button as={NavLink} to='/createAuthor' positive content='Add a new author'/>
-                   <Header content='Author Details'sub color='teal'>
-                   
-                   </Header>
-                   
-               </Fragment>
-           {authorsByName.map(author =>(
-               <AuthorListItem key={author.id} author={author}/>
-           ))} </>
-      
+         {userStore.isAdmin && <Button as={NavLink} to='/createAuthor' positive content='Add a new author'/>}
+        <Header content='Author Details'sub color='teal'></Header>            
+        </Fragment>
+        {authorsByName.map(author =>(
+            <AuthorListItem key={author.id} author={author}/>
+        ))} </>
  )
-    
 })

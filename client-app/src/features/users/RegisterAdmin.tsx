@@ -6,12 +6,12 @@ import MyTextInput from '../../app/common/form/MyTextInput';
 import { useStore } from '../../app/stores/store';
 import * as Yup from 'yup';
 
-export default observer(function RegisterForm() {
+export default observer(function RegisterAdmin() {
     const {userStore} = useStore();
     return (
         <Formik
             initialValues={{Firstname: '',Lastname: '', Username: '', email: '', password: '', error: null}}
-            onSubmit={(values, {setErrors}) => userStore.registerUser(values).catch(error => 
+            onSubmit={(values, {setErrors}) => userStore.registerAdmin(values).catch(error => 
                 setErrors({error}))}
             validationSchema={Yup.object({
                 Firstname: Yup.string().required(),

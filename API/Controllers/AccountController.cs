@@ -100,8 +100,8 @@ namespace API.Controllers
             return Unauthorized();
         }
 
-        [HttpPost("register")]
-        public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto)
+        [HttpPost("registerUser")]
+        public async Task<ActionResult<UserDto>> RegisterUser(RegisterDto registerDto)
         {
             if (await _userManager.Users.AnyAsync(x => x.Email == registerDto.Email))
             {
@@ -118,15 +118,15 @@ namespace API.Controllers
 
                 user = new User
                 {
+                    Firstname = registerDto.Firstname,
                     Lastname = registerDto.Lastname,
                     UserName = registerDto.Username,
                     Email = registerDto.Email,
-                    PasswordHash = registerDto.PasswordHash,
-                    PersonalInfo = null,
+                    PasswordHash = registerDto.Password,
                     Role = "user"
                 };
 
-            var result = await _userManager.CreateAsync(user, registerDto.PasswordHash);
+            var result = await _userManager.CreateAsync(user, registerDto.Password);
 
             if (result.Succeeded)
             {
@@ -136,40 +136,40 @@ namespace API.Controllers
             return BadRequest("Problem registering user");
         }
 
-        // [HttpPost("register")]
-        // public async Task<ActionResult<UserDto>> RegisterAdmin(RegisterDto registerDto)
-        // {
-        //     if (await _userManager.Users.AnyAsync(x => x.Email == registerDto.Email))
-        //     {
-        //         ModelState.AddModelError("email", "Email is taken");
-        //         return ValidationProblem();
-        //     }
-        //     if (await _userManager.Users.AnyAsync(x => x.UserName == registerDto.Username))
-        //     {
-        //         ModelState.AddModelError("username", "Username is taken");
-        //         return ValidationProblem();
-        //     }
+        [HttpPost("registerAdmin")]
+        public async Task<ActionResult<UserDto>> RegisterAdmin(RegisterDto registerDto)
+        {
+            if (await _userManager.Users.AnyAsync(x => x.Email == registerDto.Email))
+            {
+                ModelState.AddModelError("email", "Email is taken");
+                return ValidationProblem();
+            }
+            if (await _userManager.Users.AnyAsync(x => x.UserName == registerDto.Username))
+            {
+                ModelState.AddModelError("username", "Username is taken");
+                return ValidationProblem();
+            }
 
-        //     AppUser user = null;
+            AppUser user = null;
 
-        //     user = new User
-        //     {
-        //         Lastname = registerDto.Lastname,
-        //         UserName = registerDto.Username,
-        //         Email = registerDto.Email,
-        //         PasswordHash = registerDto.PasswordHash,
-        //         PersonalInfo = null,
-        //         Role = "admin"
-        //     };
+                user = new User
+                {
+                    Firstname = registerDto.Firstname,
+                    Lastname = registerDto.Lastname,
+                    UserName = registerDto.Username,
+                    Email = registerDto.Email,
+                    PasswordHash = registerDto.Password,
+                    Role = "admin"
+                };
 
-        //     var result = await _userManager.CreateAsync(user, registerDto.PasswordHash);
+            var result = await _userManager.CreateAsync(user, registerDto.Password);
 
-        //     if (result.Succeeded)
-        //     {
-        //         return CreateUserObject(user);
-        //     }
+            if (result.Succeeded)
+            {
+                return CreateUserObject(user);
+            }
 
-        //     return BadRequest("Problem registering user");
-        // }
+            return BadRequest("Problem registering user");
+        }
     }
 }

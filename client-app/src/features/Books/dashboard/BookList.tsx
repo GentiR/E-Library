@@ -10,49 +10,16 @@ import foto from '../../../Foto/Harryy.png';
 
 
 export default observer( function BookList(){
-    const{bookStore} = useStore();
+    const{bookStore, userStore} = useStore();
     const {deleteBook, booksByYear, loading} = bookStore;
+    const {userByFirstname} = userStore;
     const [target, setTarget] = useState('');
 
     function handleBookDelete(e: SyntheticEvent<HTMLButtonElement>, id:string){
         setTarget(e.currentTarget.name);
         deleteBook(id);
     }
-
-
-   
-        // <Segment>
-        //     <Item.Group divided>
-        //         {booksByYear.map(book => (
-        //             <Item key={book.id}>
-        //                 <Item.Content>
-        //                     <Item.Header as='a'> {book.bookName}</Item.Header>
-        //                     <Item.Description>
-        //                         <div>{book.publicationYear}</div>
-        //                         <div>{book.publisher}</div>
-        //                     </Item.Description>
-
-        //                     <Item.Extra>
-                            
-        //                         <Button as={Link} to={`/books/${book.id}`} floated='right' content='View' color='blue'/>
-        //                         <Button
-        //                             name = {book.id}
-        //                             loading={loading && target=== book.id} 
-        //                             onClick={(e) => handleBookDelete(e, book.id)}
-        //                             floated='right' 
-        //                             content='Delete' 
-        //                             color='red'
-        //                           />
-                            
-        //                     </Item.Extra>
-        //                 </Item.Content>
-        //             </Item>
-        //         ))}
-        //     </Item.Group>
-        // </Segment>
-        
-        return (
-           
+        return (    
         <Card.Group >
             {booksByYear.map(book =>(
                 <Card className='bookList' key={book.id}>
@@ -70,15 +37,15 @@ export default observer( function BookList(){
                     </Card.Content>
                     <Card.Content>
                     <Button as={Link} to={`/books/${book.id}`} floated='right' content='View' color='blue'/>
+                    {userStore.isAdmin &&
                     <Button
                      name = {book.id} 
                      loading={loading && target=== book.id} 
                      onClick={(e) => handleBookDelete(e, book.id)} 
                      color='red'
                      content='Delete'
-                     floated='right' />
-                     
-                     
+                     floated='right' /> 
+                    }
                     </Card.Content>
                 </Card>
              ))}

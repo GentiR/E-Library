@@ -9,7 +9,7 @@ import { useStore } from '../../../app/stores/store';
 
 export default observer ( function AuthorDetails(){
 
-  const {authorStore} = useStore();
+  const {authorStore, userStore} = useStore();
   const {selectedAuthor: author,loadAuthor,loadingInitial} = authorStore;
   const {id} = useParams<{id: string}>();
 
@@ -24,13 +24,13 @@ return(
   <Card fluid >
     <Card.Content>
       <Card.Header>{author.name}</Card.Header>
-      <Card.Description>
-       {author.description}
-      </Card.Description>
+        <Card.Description>
+          {author.description}
+        </Card.Description>
     </Card.Content>
     <Card.Content extra>
      <Button.Group widths='2'>
-         <Button as={Link} to={`/manage/author/${author.id}` } basic color='blue' content='Edit'/>
+       {userStore.isAdmin && <Button as={Link} to={`/manage/author/${author.id}` } basic color='blue' content='Edit'/>}
          <Button as={Link} to={'/authors'} basic color='grey' content='Cancel'/>
      </Button.Group>
     </Card.Content>

@@ -19,6 +19,9 @@ import ModalContainer from '../common/modals/ModalContainer';
 import EventDashboard from '../../features/Events/dashboard/EventDashboard';
 import EventForm from '../../features/Events/form/EventForm';
 import EventDetails from '../../features/Events/details/EventDetails';
+import Users from '../../features/users/Users';
+import LanguageForm from '../../features/Languages/LanguageForm';
+import LanguageList from '../../features/Languages/LanguageList';
 
 function App() {
   const location = useLocation();
@@ -52,10 +55,13 @@ function App() {
               <Route path="/books/:id" component={BookDetails}/>
               <Route path={['/createBook', '/manage/book/:id']} component={BookForm}/> 
               <Route path='/login' component={LoginForm}/>
+              <Route path='/users' component={Users}/>
               <Route exact path="/contactForm" component={ContactForm}/>
             <Route exact path='/events' component={EventDashboard}/>
             <Route path="/events/:id" component={EventDetails}/>
-            <Route path={['/createEvent', '/manage/event/edit/:id']} component={EventForm}/>
+            <Route exact path='/language' component={LanguageList}/>
+            <Route path={['/createLanguage', '/manage/language/edit/:id']} component={LanguageForm}/>
+            <Route path={['/createLanguage', '/manage/language/edit/:id']} component={LanguageForm}/>
           </Container>
           </>
           )}

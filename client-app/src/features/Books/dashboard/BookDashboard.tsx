@@ -22,9 +22,6 @@ export default observer( function BookDashboard(){
 
     
     return(
-
-
-
         <Grid>
             <Grid.Column width='16'>
               <BookList />

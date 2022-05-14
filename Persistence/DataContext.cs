@@ -21,7 +21,7 @@ namespace Persistence
         public DbSet<Gift> Gifts { get; set;}
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<Admin>();
+            builder.Entity<User>();
 
             base.OnModelCreating(builder);
             // Customize the ASP.NET Identity model and override the defaults if needed.

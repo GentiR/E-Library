@@ -2,6 +2,7 @@ import axios, { AxiosResponse } from 'axios';
 import { Author } from '../models/author';
 import { Book } from '../models/book';
 import { Gift } from '../models/gift';
+import { Language } from '../models/language';
 import { User, UserFormValues } from '../models/user';
 import { store } from '../stores/store';
 
@@ -55,6 +56,14 @@ const Books = {
     delete: (id: string) => axios.delete<void>(`/books/${id}`)
 }
 
+const Languages = {
+    list: () => requests.get<Language[]>('/languages'),
+    details: (id: string)=> requests.get<Language>(`/languages/${id}`),
+    create: (language: Language) => axios.post<void>('/languages', language),
+    update: (language: Language) => axios.put<void>(`/languages/${language.id}`, language),
+    delete: (id: string) => axios.delete<void>(`/languages/${id}`)
+}
+
 const Gifts = {
     list: () => requests.get<Gift[]>('/gifts'),
     details: (id: string)=> requests.get<Gift>(`/gifts/${id}`),
@@ -66,7 +75,8 @@ const Gifts = {
 const Account = { 
     current: () => requests .get<User>('/account'),
     login: (user: UserFormValues) => requests.post<User>('/account/login', user),
-    register: (user: UserFormValues) => requests.post<User>('/account/register', user),
+    registerUser: (user: UserFormValues) => requests.post<User>('/account/registerUser', user),
+    registerAdmin: (user: UserFormValues) => requests.post<User>('/account/registerAdmin', user),
 }
 
 const Users = {
@@ -77,6 +87,7 @@ const Users = {
     const agent = {
     Authors,
     Books,
+    Languages,
     Account,
     Gifts
 }
